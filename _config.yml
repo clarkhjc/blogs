@@ -104,4 +104,4 @@ theme: landscape
 deploy:
   type: git
   repo: https://gitee.com/clarkhjc/clarkhjc.git
-  branch: master
+  branch: main
