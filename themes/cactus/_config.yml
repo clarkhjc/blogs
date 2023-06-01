@@ -15,10 +15,10 @@ direction: ltr
 # languages/*.yml
 nav:
   home: /
-  about: /about/
   articles: /archives/
   projects: https://gitlab.com/ClarkH
   search: /search/
+  about: /about/
 
 
 # Links to your social media accounts.
