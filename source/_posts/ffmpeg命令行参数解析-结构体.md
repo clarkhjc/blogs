@@ -14,7 +14,7 @@ ffmpeg命令行功能强大，本文简单介绍一下命令行解析过程。
 ffmpeg -y -ss 4 -i 1.ts -vframes 1 -f image2 -s 640x360 out.jpg
 ```
 在ffmpeg_opt.c文件中通过两个函数split_commandline、parse_optgroup解析命令行参数并保存在OptionParseContext结构体中。
-```
+```c
 typedef struct OptionParseContext {
     OptionGroup global_opts;
     OptionGroupList *groups;
@@ -34,7 +34,7 @@ groups[1]保存输入参数选项组列表。
 
 ![vscode-debug-1](vscode-debug-1.jpeg)
 
-```
+```c
 typedef struct OptionGroupList {
     const OptionGroupDef *group_def;
     OptionGroup *groups;
@@ -44,7 +44,7 @@ typedef struct OptionGroupList {
 选项组列表保存一系列选项组，选项组个数保存在nb_groups字段，groups是选项组数组首地址。
 
 从上面调试截图可以看出针对举例的命令行，输出和输入选项组都只有一个。
-```
+```c
 typedef struct OptionGroup {
     const OptionGroupDef *group_def;
     const char *arg;
@@ -72,7 +72,7 @@ typedef struct OptionGroup {
 ![vscode-debug-5](vscode-debug-5.png)
 
 从key/value值可以看出和我们在命令行里设置的输入参数一样，-ss 4。
-```
+```c
 typedef struct Option {
     const OptionDef  *opt;
     const char       *key;
@@ -80,7 +80,7 @@ typedef struct Option {
 } Option;
 ```
 
-```
+```c
 typedef struct OptionDef {
     const char *name;
     int flags;

@@ -31,7 +31,7 @@ make
 
 4. 修改launch.json中程序路径以及程序参数
 
-```
+```json
 {
     // 使用 IntelliSense 了解相关属性。 
     // 悬停以查看现有属性的描述。

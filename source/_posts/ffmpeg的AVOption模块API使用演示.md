@@ -8,7 +8,7 @@ tags:
 - **查找选项**
 
 1. av_opt_next/av_opt_find函数可以直接在AVClass对象上查找选项：
-```
+```c
 // 1、API直接操作AVClass结构体
 
 // 通过av_opt_next查找AVClass中的所有选项
@@ -29,7 +29,7 @@ printf("\n");
 ```
 
 2. 查找结构体中子结构体的AVClass并遍历子结构体的所有选项：
-```
+```c
 // 查找结构体中子结构体的AVClass并遍历子结构体的所有选项
 void *iter = NULL;
 const AVClass *child_c = av_opt_child_class_iterate(test_c, &iter);
@@ -43,7 +43,7 @@ printf("\n");
 ```
 
 3. API操作结构体对象
-```
+```c
 test_struct *obj = alloc_test_struct();
 
 // 演示av_opt_child_next和av_opt_next用法
@@ -70,7 +70,7 @@ printf("\n");
 - **读写选项**
 通过av_opt_get获取某个选项的值，通过av_opt_set设置某个选项的值：
 
-```
+```c
 /*************************
  * 二、读写选项
  * **********************/
@@ -90,7 +90,7 @@ if (res >= 0) {
 ```
 
 完整演示代码：
-```
+```c
 #include <stdio.h>
 #include <libavutil/opt.h>
 

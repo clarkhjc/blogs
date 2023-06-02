@@ -9,7 +9,7 @@ tags:
 
 相关结构体定义：
 
-```
+```c
 typedef struct AVDictionaryEntry {
     char *key;
     char *value;
@@ -24,7 +24,7 @@ typedef struct AVDictionary AVDictionary;
 
 1. 创建一个字典
    
-```
+```c
 AVDictionary *d = NULL; // "create" an empty dictionary
 ```
 
@@ -32,13 +32,13 @@ NULL可以作为一个空字典，在任何需要指向AVDictionary指针的地�
 
 2. 添加一个键-值对
 
-```
+```c
 av_dict_set(&d, "foo", "bar", 0); // add an entry
 ```
 
 3. 遍历字典
 
-```
+```c
 AVDictionaryEntry *t = NULL;
 while ((t = av_dict_iterate(d, t))) {
    <....>                        // iterate over all entries in d
@@ -47,19 +47,19 @@ while ((t = av_dict_iterate(d, t))) {
 
 4. 获取某个键-值对
 
-```
+```c
 AVDictionaryEntry *t = av_dict_get(d, "foo", NULL, AV_DICT_MATCH_CASE);
 ```
 
 5. 释放字典以及包含的内容
 
-```
+```c
 av_dict_free(&d);
 ```
 
 6. 例子
 
-```
+```c
 #include <stdio.h>
 #include <libavutil/dict.h>
 

@@ -6,7 +6,7 @@ tags:
 ---
 
 **函数原型**
-```
+```c
 int split_commandline(OptionParseContext *octx, int argc, char *argv[],
                       const OptionDef *options,
                       const OptionGroupDef *groups, int nb_groups);
@@ -25,7 +25,7 @@ int split_commandline(OptionParseContext *octx, int argc, char *argv[],
 第三个参数传递的是options，这是一个预定义的OptionDef选项数组。
 
 第四个参数groups定义如下
-```
+```c
 static const OptionGroupDef groups[] = {
     [GROUP_OUTFILE] = { "output url",  NULL, OPT_OUTPUT },
     [GROUP_INFILE]  = { "input url",   "i",  OPT_INPUT },

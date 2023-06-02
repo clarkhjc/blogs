@@ -8,7 +8,7 @@ tags:
 AVOption提供一个通用系统，用于在任意结构体里声明选项。一个选项可以有帮忙文本，类型和可能的值范围。选项可以枚举，读写。
 
 AVOption结构体如下：
-```
+```c
 /**
  * AVOption
  */
@@ -54,7 +54,7 @@ typedef struct AVOption {
 ```
 
 AVClass结构体如下：
-```
+```c
 /**
  * Describe the class of an AVClass context structure. That is an
  * arbitrary struct of which the first field is a pointer to an
@@ -153,7 +153,7 @@ typedef struct AVClass {
 每个AVOption选项必须有一个非空的名字，一个类型，一个默认的值；对于值类型的AVOption也必须有一个允许的值范围；包含一个偏移量，指定结构体中和这个选项关联的字段的位置；AVOption中其他字段不是必须的，按情况赋值。
 
 下面的例子展示了带AVOption支持的结构体：
-```
+```c
 typedef struct test_struct {
   const AVClass *class;
   int      int_opt;
@@ -182,7 +182,7 @@ static const AVClass test_class = {
 当你分配结构体时，要确保AVClass指针指向正确的值，av_opt_set_defaults函数可以用来初始化。之后，该结构体就可以与AVOption API一起使用了。
 
 继续上面的例子，我们展示结构体的构造和释放：
-```
+```c
 test_struct *alloc_test_struct(void)
 {
   test_struct *ret = av_mallocz(sizeof(*ret));
@@ -206,7 +206,7 @@ void free_test_struct(test_struct **foo)
 AVClass.child_class_iterate函数。
 
 假设上面的test_struct结构体现在包含一个child_struct成员：
-```
+```c
 typedef struct child_struct {
   AVClass *class;
   int flags_opt;
@@ -240,7 +240,7 @@ const AVClass* child_class_iterate(void **iter)
 }
 ```
 将child_next和child_class_iterate放入test_class中：
-```
+```c
 static const AVClass test_class = {
   .class_name          = "test class",
   .item_name           = av_default_item_name,
@@ -261,7 +261,7 @@ static const AVClass test_class = {
 只需设置选项的unit字段，并将常量本身创建为AV_OPT_TYPE_CONST类型的选项，其unit字段设置为相同的字符串。它们的default_val字段应该包含命名常量的值。
 
 例如，要为上面的test_flags选项添加一些命名常量，请将以下内容放入child_opts数组中：
-```
+```c
 { "test_flags", "This is a test option of flags type.",
   offsetof(child_struct, flags_opt), AV_OPT_TYPE_FLAGS, { .i64 = 0 }, INT_MIN, INT_MAX, .unit="test_unit" },
 { "flag1", "This is a flag with value 16", 0, AV_OPT_TYPE_CONST, { .i64 = 16 }, 0, 0, .unit="test_unit" },

@@ -33,34 +33,34 @@ SpecifierOpt结构体如下：
 ![options](options.png)
 
 `.off = OFFSET(codec_names)` 在选项定义的时候会计算出codec_names成员在OptionsContext结构体中的偏移量，在write_option中根据结构体首地址以及成员偏移量可以得到成员的访问地址:
-```
+```c
 void *dst = po->flags & (OPT_OFFSET | OPT_SPEC) ?
                 (uint8_t *)optctx + po->u.off : po->u.dst_ptr;
 ```
 codec_names是SpecifierOpt指针变量，dst指向的是codec_names的访问地址，所以dst相当于是指向SpecifierOpt指针的指针
-```
+```c
 SpecifierOpt **so = dst;
 ```
 ![OptionsContext_1](OptionsContext_1.png)
 optctx是ptr0，dst是ptr5。
 
-```
+```c
 dstcount = (int *)(so + 1);
 ```
 (so + 1)相当于是(dst + sizeof(SpecifierOpt *))，得到的是ptr6，即nb_codec_names变量的访问地址。
-```
+```c
 *so = grow_array(*so, sizeof(**so), dstcount, *dstcount + 1);
 ```
 通过grow_array向codec_names数组中添加一个SpecifierOpt变量，并把nb_codec_names加1。
-```
+```c
 (*so)[*dstcount - 1].specifier = str;
 ```
 将-c或者-c:后面的值赋值给新添加的SpecifierOpt变量的specifier字段.
-```
+```c
 dst = &(*so)[*dstcount - 1].u;
 ```
 将SpecifierOpt的union成员地址赋值给dst。
-```
+```c
 if (po->flags & OPT_STRING) {
         // ...
         *(char **)dst = str;

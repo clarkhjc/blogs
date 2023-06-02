@@ -12,7 +12,7 @@ avformat_find_stream_info、avformat_seek_file等。
 
 信息保存在Demuxer结构体里，
 
-```
+```c
 typedef struct Demuxer {
     InputFile f;
 
@@ -39,7 +39,7 @@ typedef struct Demuxer {
 
 Demuxer主要成员是InputFile结构体
 
-```
+```c
 typedef struct InputFile {
     const AVClass *class;
 

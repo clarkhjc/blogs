@@ -41,7 +41,7 @@ title: Qt QSS用法
 
   1. 线性渐变
 
-  ```
+  ```css
   QTextEdit {
   background-color: qlineargradient(x1:0, y1:0, x2:1, y2:1,
               stop:0 white, stop: 0.4 gray, stop:1 green)
@@ -55,7 +55,7 @@ title: Qt QSS用法
 
   2. 辐射渐变
 
-  ```
+  ```css
   QTextEdit {
   background-color: qradialgradient(cx:0, cy:0, radius: 1,
               fx:0.5, fy:0.5, stop:0 white, stop:1 green)
@@ -69,7 +69,7 @@ title: Qt QSS用法
 
   3. 圆锥渐变
 
-  ```
+  ```css
   QTextEdit {
   background-color: qconicalgradient(cx:0.5, cy:0.5, angle:30,
               stop:0 white, stop:1 #00FF00)
@@ -155,7 +155,7 @@ title: Qt QSS用法
 
   默认是滚动的。
 
-  ```
+  ```css
   QTextEdit {
       background-image: url("leaves.png");
       background-attachment: fixed;
@@ -172,7 +172,7 @@ title: Qt QSS用法
 
   属性类型语法为：`margin | border | padding | content`
 
-  ```
+  ```css
   QWidget {
       margin:10px 10px 10px 10px;
       border: 10px solid green;
@@ -187,7 +187,7 @@ title: Qt QSS用法
 
   背景颜色裁剪到content。
 
-  ```
+  ```css
   QWidget {
       margin:10px 10px 10px 10px;
       border: 10px solid green;
@@ -202,7 +202,7 @@ title: Qt QSS用法
 
   背景颜色裁剪到padding。
 
-  ```
+  ```css
   QWidget {
       margin:10px 10px 10px 10px;
       border: 10px solid green;
@@ -234,7 +234,7 @@ title: Qt QSS用法
   默认情况下，margin、border-width、padding大小都是0，在这种情况下，四个长方形完全重叠。
   为了展示background-origin我们需要先设置margin、padding的大小
 
-  ```
+  ```css
   QWidget {
       margin:10px 10px 10px 10px;
       border: 1px solid red;
@@ -249,7 +249,7 @@ title: Qt QSS用法
 
   ![origin-content](origin-content.png)
 
-  ```
+  ```css
   QWidget {
       margin:10px 10px 10px 10px;
       border: 1px solid red;
@@ -419,7 +419,7 @@ title: Qt QSS用法
 
   通过下面qss代码来设置不同大小的按钮:
 
-  ```
+  ```css
   QPushButton{
       border-image:url(:/img/btn.png) 1 1 4 1;
       border-top: 1px transparent;
@@ -475,7 +475,7 @@ title: Qt QSS用法
 
   设置控件内边距大小，此属性相当于设置 `padding-top, padding-right, padding-bottom, padding-left`.
 
-  ```
+  ```css
   QWidget {
       margin:10px 10px 10px 10px;
       border: 10px solid green;
@@ -502,7 +502,7 @@ title: Qt QSS用法
 
   属性值是svg时，svg会缩放到子控件大小。
 
-  ```
+  ```css
   QCheckBox::indicator:unchecked {
       image: url(:/img/CheckBoxUncheck.png);
   }
@@ -623,7 +623,7 @@ title: Qt QSS用法
 
   属性类型语法为：`margin | border | padding | content`
 
-  ```
+  ```css
   QSpinBox {
   margin: 20px;
   border: 20px solid green;
@@ -647,7 +647,7 @@ title: Qt QSS用法
 
   ![subcontrol-origin-margin](subcontrol-origin-margin.png)
 
-  ```
+  ```css
   QSpinBox {
   margin: 20px;
   border: 20px solid green;
@@ -671,7 +671,7 @@ title: Qt QSS用法
 
   ![subcontrol-origin-margin](subcontrol-origin-border.png)
 
-  ```
+  ```css
   QSpinBox {
   margin: 20px;
   border: 20px solid green;
@@ -695,7 +695,7 @@ title: Qt QSS用法
 
   ![subcontrol-origin-margin](subcontrol-origin-padding.png)
 
-  ```
+  ```css
   QSpinBox {
   margin: 20px;
   border: 20px solid green;
@@ -729,7 +729,7 @@ title: Qt QSS用法
 
   属性类型语法为：`top | bottom | left | right | center`
 
-  ```
+  ```css
   QSpinBox {
   margin: 20px;
   border: 20px solid green;
@@ -753,7 +753,7 @@ title: Qt QSS用法
 
   ![subcontrol-origin-margin](subcontrol-position-left-top.png)
 
-  ```
+  ```css
   QSpinBox {
   margin: 20px;
   border: 20px solid green;
