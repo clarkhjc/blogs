@@ -71,8 +71,6 @@ ffmpeg -i in.mkv -vf negate tmp.mp4
 ```shell
 ffmpeg -i in.mkv -vf edgedetect tmp.mp4
 ```
-原图:
-![edgedetect_1](edgedetect_1.png)
 检测之后的图:
 ![edgedetect_2](edgedetect_2.png)
 
