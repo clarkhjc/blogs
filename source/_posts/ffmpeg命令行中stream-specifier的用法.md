@@ -2,7 +2,7 @@
 title: ffmpeg命令行中stream specifier的用法
 date: 2023-06-01 09:40:37
 tags:
-- ffmpeg
+- ffmpeg-cmd
 ---
 
 流说明符是一个字符串，通常附加在选项名称后面，并以冒号分隔。

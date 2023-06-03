@@ -2,7 +2,7 @@
 title: ffmpeg ts文件截图分析
 date: 2023-06-01 13:05:40
 tags:
-- ffmpeg
+- ffmpeg-src
 ---
 
 调用ffmpeg api截图ts文件时遇到一个问题，seek不到关键帧。

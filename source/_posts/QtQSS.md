@@ -1,5 +1,8 @@
 ---
 title: Qt QSS用法
+tags:
+- Qt
+- QSS
 ---
 
 # 设置控件背景

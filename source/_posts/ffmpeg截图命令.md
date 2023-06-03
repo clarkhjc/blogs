@@ -2,7 +2,7 @@
 title: ffmpeg截图命令
 date: 2023-06-01 13:15:31
 tags:
-- ffmpeg
+- ffmpeg-cmd
 ---
 
 ffmpeg命令行是功能强大的音视频处理工具，

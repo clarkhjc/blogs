@@ -2,7 +2,7 @@
 title: ffmpeg audio常用命令
 date: 2023-06-01 09:31:13
 tags:
-- ffmpeg
+- ffmpeg-cmd
 - audio
 ---
 

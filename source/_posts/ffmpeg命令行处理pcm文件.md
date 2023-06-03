@@ -2,7 +2,8 @@
 title: ffmpeg命令行处理pcm文件
 date: 2023-06-01 10:57:47
 tags:
-- ffmpeg
+- ffmpeg-cmd
+- audio
 ---
 
 # 一、音频基本概念

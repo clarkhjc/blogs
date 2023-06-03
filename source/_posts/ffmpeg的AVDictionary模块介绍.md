@@ -2,7 +2,7 @@
 title: ffmpeg的AVDictionary模块介绍
 date: 2023-06-01 10:07:30
 tags:
-- ffmpeg
+- ffmpeg-src
 ---
 
 字典用来存储键-值对。

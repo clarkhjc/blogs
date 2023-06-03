@@ -2,7 +2,7 @@
 title: ffmpeg命令行耗时输出(benchmark)
 date: 2023-06-01 12:45:02
 tags:
-- ffmpeg
+- ffmpeg-cmd
 ---
 
 ffmpeg命令行支持输出程序耗时统计，默认是不打印的，需要通过参数控制

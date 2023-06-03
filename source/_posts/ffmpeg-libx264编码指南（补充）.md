@@ -2,7 +2,8 @@
 title: ffmpeg libx264编码指南（补充）
 date: 2023-06-01 12:06:49
 tags:
-- ffmpeg
+- ffmpeg-cmd
+- libx264
 ---
 
 - **CBR (Constant Bit Rate)**

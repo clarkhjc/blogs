@@ -2,7 +2,7 @@
 title: ffmpeg命令行参数解析-结构体
 date: 2023-06-01 12:52:47
 tags:
-- ffmpeg
+- ffmpeg-src
 ---
 
 ffmpeg命令行功能强大，本文简单介绍一下命令行解析过程。

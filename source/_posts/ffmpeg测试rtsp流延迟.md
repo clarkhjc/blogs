@@ -2,7 +2,8 @@
 title: ffmpeg测试rtsp流延迟
 date: 2023-06-01 13:09:05
 tags:
-- ffmpeg
+- ffmpeg-cmd
+- rtsp
 ---
 
 RTSP是 TCP/IP 协议体系中的一个应用层协议，该协议定义了一对多应用程序如何有效地通过 IP 网络传送多媒体数据。RTSP在体系结构上位于RTP和RTCP之上，它使用TCP或UDP完成数据传输。HTTP与RTSP相比，HTTP传送HTML，而RTSP传送的是多媒体数据。
