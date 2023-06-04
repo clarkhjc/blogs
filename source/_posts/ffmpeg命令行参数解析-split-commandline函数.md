@@ -5,26 +5,48 @@ tags:
 - ffmpeg-src
 ---
 
+# 选项解析结构体介绍
+选项解析涉及几个结构体：OptionParseContext、OptionGroupList、OptionGroupDef、OptionGroup、Option、OptionDef。
+结构体包含关系如下：
+![选项解析涉及的结构体](选项解析涉及的结构体.png)
+
+OptionParseContext包含三部分：
+- global_opts（类型OptionGroup）存放所有全局选项，比如-y
+- groups[0]（类型OptionGroupList）包含所有输出选项
+- groups[1]（类型OptionGroupList）包含所有输入选项
+
+OptionGroupList：
+- groups[0]（类型OptionGroup）第一个文件的选项组
+- groups[1]（类型OptionGroup）第二个文件的选项组
+- ......
+
+OptionGroup选项组包含一个文件的所有选项：
+- opts[0]（类型Option）第一个选项
+- opts[1]（类型Option）第二个选项
+- ......
+
+ffmpeg支持输入多个文件输出多个文件，比如输入in1.mp4、in2.mp4；输出out1.mp4、out2.mp4
+```shell
+./ffmpeg -ss 00:00:10 -i in1.mp4 -ss 00:00:20 -i in2.mp4 -map 0:v -map 1:a -c:v libx264 -c:a aac out1.mp4 -map 1:v -map 0:a -c:v mpeg4 -c:a ac3 out2.mp4 -y
+```
+![上图命令行拆分后存放结构](multi-in_multi-out.png)
+
+# 选项拆分函数
+
 **函数原型**
 ```c
 int split_commandline(OptionParseContext *octx, int argc, char *argv[],
                       const OptionDef *options,
                       const OptionGroupDef *groups, int nb_groups);
 ```
-将命令行拆分成内部格式，方便后续处理。
-
-命令行被假定为由两种选项组成，一种属于一个组（选项标记包含OPT_SPEC, OPT_OFFSET or OPT_PERFILE），一种属于全局选项。
-
-组(由OptionGroupDef结构体定义)是由组分隔符选项(例如-i)或非选项(不以-开头)终止的选项序列。没有分隔符选项的组必须始终位于所提供的组列表的第一个。
-
-同一组中的所有选项存储在OptionGroupList中的一个OptionGroup结构中，具有相同组定义的所有组存储在OptionParseContext.groups中的一个OptionGroupList中。组列表的顺序与组定义的顺序相同。
+将命令行拆分后存放在OptionParseContext结构体中，方便后续处理。
 
 **调用**
 
 ![ffmpeg_parser_options](ffmpeg_parser_options.png)
-第三个参数传递的是options，这是一个预定义的OptionDef选项数组。
+第四个参数传递的是options，这是一个预定义的OptionDef选项数组。
 
-第四个参数groups定义如下
+第五个参数groups定义如下
 ```c
 static const OptionGroupDef groups[] = {
     [GROUP_OUTFILE] = { "output url",  NULL, OPT_OUTPUT },
@@ -32,7 +54,7 @@ static const OptionGroupDef groups[] = {
 };
 ```
 说明有两个选项组，一个包含输出参数，一个包含输入参数。
-![选项解析涉及的结构体](选项解析涉及的结构体.png)
+
 
 下面对函数源码进行简单的注释
 ![split_commandline-1](split_commandline-1.png)
