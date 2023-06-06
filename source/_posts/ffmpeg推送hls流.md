@@ -1,8 +1,9 @@
 ---
 title: ffmpeg推送hls流
-date: 2023-06-01 13:12:58
 tags:
-- ffmpeg-cmd
+  - ffmpeg-cmd
+abbrlink: ab268f66
+date: 2023-06-01 13:12:58
 ---
 
 HLS (HTTP Live Streaming)是Apple的动态码率自适应技术。

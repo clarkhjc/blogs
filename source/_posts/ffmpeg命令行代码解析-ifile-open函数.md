@@ -1,8 +1,9 @@
 ---
 title: ffmpeg命令行代码解析-ifile_open函数
-date: 2023-06-01 09:49:45
 tags:
-- ffmpeg-src
+  - ffmpeg-src
+abbrlink: c23817ad
+date: 2023-06-01 09:49:45
 ---
 ifile_open函数主要实现打开一个文件，获取封装和解码信息，seek源文件等功能。
 

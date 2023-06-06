@@ -1,8 +1,9 @@
 ---
 title: C语言分割字符串利器-strtok_r
-date: 2023-06-01 22:11:14
 tags:
-- C
+  - C
+abbrlink: ad84c48a
+date: 2023-06-01 22:11:14
 ---
 
 strtok_r函数可以根据指定的分隔符来切分字符串。

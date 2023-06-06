@@ -1,8 +1,9 @@
 ---
 title: Mac m1系统调试ffmpeg源码
-date: 2023-06-01 12:48:10
 tags:
-- ffmpeg-debug
+  - ffmpeg-debug
+abbrlink: 88cda10e
+date: 2023-06-01 12:48:10
 ---
 
 如果想要在mac系统上调试ffmpeg源码，可以利用vscode开发工具。

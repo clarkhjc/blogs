@@ -1,8 +1,9 @@
 ---
 title: ffmpeg命令行参数解析-split_commandline函数
-date: 2023-06-01 12:39:36
 tags:
-- ffmpeg-src
+  - ffmpeg-src
+abbrlink: 6d81cb11
+date: 2023-06-01 12:39:36
 ---
 
 # 选项解析结构体介绍

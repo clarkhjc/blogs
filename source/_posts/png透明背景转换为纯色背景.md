@@ -1,8 +1,9 @@
 ---
 title: png透明背景转换为纯色背景
-date: 2023-06-04 20:22:42
 tags:
-- imagemagick
+  - imagemagick
+abbrlink: c079378d
+date: 2023-06-04 20:22:42
 ---
 
 如何将png的透明背景转换为纯色的背景呢？可以使用imagemagick提供的convert命令行

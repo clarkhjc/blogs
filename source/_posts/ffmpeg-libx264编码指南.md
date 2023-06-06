@@ -1,9 +1,10 @@
 ---
 title: ffmpeg libx264编码指南
-date: 2023-06-01 12:24:34
 tags:
-- ffmpeg-cmd
-- libx264
+  - ffmpeg-cmd
+  - libx264
+abbrlink: dd9a4102
+date: 2023-06-01 12:24:34
 ---
 
 首先在系统上安装x264编码器，配置ffmpeg时打开--enable-libx264选项，就可以在ffmpeg中使用libx264了。

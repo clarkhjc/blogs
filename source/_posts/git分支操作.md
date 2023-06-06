@@ -1,8 +1,9 @@
 ---
 title: git分支操作
-date: 2023-06-01 21:40:18
 tags:
-- git
+  - git
+abbrlink: bc91abb3
+date: 2023-06-01 21:40:18
 ---
 
 - 查看分支

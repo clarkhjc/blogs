@@ -1,8 +1,9 @@
 ---
 title: ffmpeg截图命令
-date: 2023-06-01 13:15:31
 tags:
-- ffmpeg-cmd
+  - ffmpeg-cmd
+abbrlink: 8cb3b9b2
+date: 2023-06-01 13:15:31
 ---
 
 ffmpeg命令行是功能强大的音视频处理工具，

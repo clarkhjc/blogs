@@ -1,9 +1,10 @@
 ---
 title: ffmpeg audio常用命令
-date: 2023-06-01 09:31:13
 tags:
-- ffmpeg-cmd
-- audio
+  - ffmpeg-cmd
+  - audio
+abbrlink: '47995412'
+date: 2023-06-01 09:31:13
 ---
 
 ## 常用命令行参数：

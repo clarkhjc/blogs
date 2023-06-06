@@ -1,8 +1,9 @@
 ---
 title: cmake基本用法
-date: 2023-06-01 17:33:33
 tags:
-- cmake
+  - cmake
+abbrlink: '5985696'
+date: 2023-06-01 17:33:33
 ---
 
 通过一个例子，熟悉常用的cmake命令，这个例子包括：

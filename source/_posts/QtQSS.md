@@ -1,8 +1,9 @@
 ---
 title: Qt QSS用法
 tags:
-- Qt
-- QSS
+  - Qt
+  - QSS
+abbrlink: 34ea0d35
 ---
 
 # 设置控件背景

@@ -1,8 +1,9 @@
 ---
 title: ffmpeg的AVDictionary模块介绍
-date: 2023-06-01 10:07:30
 tags:
-- ffmpeg-src
+  - ffmpeg-src
+abbrlink: 59095f4
+date: 2023-06-01 10:07:30
 ---
 
 字典用来存储键-值对。

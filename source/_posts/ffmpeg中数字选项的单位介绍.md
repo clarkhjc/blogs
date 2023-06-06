@@ -1,8 +1,9 @@
 ---
 title: ffmpeg中数字选项的单位介绍
-date: 2023-06-03 08:45:46
 tags:
-- ffmpeg-cmd
+  - ffmpeg-cmd
+abbrlink: 7f420acd
+date: 2023-06-03 08:45:46
 ---
 
 B: 8 bits

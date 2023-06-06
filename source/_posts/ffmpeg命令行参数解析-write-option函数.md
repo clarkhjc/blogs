@@ -1,8 +1,9 @@
 ---
 title: ffmpeg命令行参数解析-write_option函数
-date: 2023-06-01 11:57:13
 tags:
-- ffmpeg-src
+  - ffmpeg-src
+abbrlink: 82f6ddc1
+date: 2023-06-01 11:57:13
 ---
 
 通过函数split_commandline解析命令行参数并保存在OptionParseContext结构体中。

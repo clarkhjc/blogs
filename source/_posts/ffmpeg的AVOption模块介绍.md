@@ -1,8 +1,9 @@
 ---
 title: ffmpeg的AVOption模块介绍
-date: 2023-06-01 10:18:18
 tags:
-- ffmpeg-src
+  - ffmpeg-src
+abbrlink: c7e647cb
+date: 2023-06-01 10:18:18
 ---
 
 AVOption提供一个通用系统，用于在任意结构体里声明选项。一个选项可以有帮忙文本，类型和可能的值范围。选项可以枚举，读写。

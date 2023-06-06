@@ -1,8 +1,9 @@
 ---
 title: ffmpeg-filter命令行介绍
-date: 2023-06-03 08:28:52
 tags:
-- ffmpeg-cmd
+  - ffmpeg-cmd
+abbrlink: 631f01db
+date: 2023-06-03 08:28:52
 ---
 
 一个filter可以有多个输入和多个输出，我们用下面的filtergraph来演示filter的用法：
