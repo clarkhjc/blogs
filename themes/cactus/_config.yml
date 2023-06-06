@@ -208,3 +208,5 @@ cdn:
 # 是否开启访问量统计功能(不蒜子)
 busuanzi:
   enable: true
+
+baidu_site_verification: true
