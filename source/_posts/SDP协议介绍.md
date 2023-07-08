@@ -3,7 +3,6 @@ title: SDP协议介绍
 tags:
   - sdp
   - rtsp
-  - ffmpeg
 abbrlink: a357fdc5
 date: 2023-07-07 11:55:15
 ---
