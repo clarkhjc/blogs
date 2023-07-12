@@ -1,7 +1,7 @@
 ---
 title: RTCP中NTP时间的计算
 tags:
-  - rtcp
+  - rtsp
 abbrlink: 89f0f1e3
 date: 2023-07-12 17:19:28
 ---
