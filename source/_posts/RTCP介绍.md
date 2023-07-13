@@ -35,7 +35,7 @@ RTCP是Real-Time Transport Control Protocol的缩写，是基于周期性地向�
 - 填充（P）：1比特，如果该位置为1，则该RTCP包的尾部就包含附加的填充字节。
 - 接收报告计数器（RC）：5比特，该SR包中的接收报告块的数目，可以为零。
 - 包类型（PT）：8比特，SR包是200。
-- 长度域（Length）：16比特，RTCP包的长度，包括填充的内容。
+- 长度域（Length）：16比特，RTCP包的长度，包括头和填充的内容。
 - 同步源（SSRC of sender）：32比特，SR包发送者的同步源标识符。与对应RTP包中的SSRC一样。
 - NTP timestamp（MSW+LWS）：64比特， 表示发送此报告时以挂钟时间测量的时间点。 结合来自各个接收器的接收报告中返回的时间戳，它可用于估计往返于接收器的往返传播时间。
 - RTP timestamp：32比特，与NTP时间戳对应，与RTP数据包中的RTP时间戳具有相同的单位和随机初始值。
@@ -49,4 +49,22 @@ RTCP是Real-Time Transport Control Protocol的缩写，是基于周期性地向�
 - 上次SR时间戳（Last SR,LSR）：32比特，取最近从SSRC_n收到的SR包中的NTP时间戳的中间32比特。如果目前还没收到SR包，则该域清零
 - 上次SR以来的延时（Delay since last SR,DLSR）：32比特，上次从SSRC_n收到SR包到发送本报告的延时
 - 扩展字段 profile-specific extensions
+
+### SDES包格式
+![sdes](sdes.png)
+- SDES包是一个三层结构，由一个报头和零个或多个chunk组成。
+- 一个chunk由一个SSRC标识符和0个或多个item组成。每个chunk从32位边界开始。
+- 每个item由一个字节的类型字段、一个字节的长度字段和item内容组成。长度字段的值不包括类型和长度字段两个字节。
+- item内容长度不超过255字节。
+- 多个item是连续的，即，单个item不会填充到32位边界。
+- 一个chunk中的items以一个或者多个0字节结尾。
+- item有8种，只有cname是必须要的，其他可选。
+
+#### cname语法
+![cname](cname.png)
+
+### BYE包格式
+![bye](bye.png)
+
+
 
