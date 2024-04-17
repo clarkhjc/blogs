@@ -1,7 +1,7 @@
 ---
 title: ffmpeg推送rtsp流抓包分析
 tags:
-  - rtsp
+  - ffmpeg
 abbrlink: 69c2bf6a
 date: 2023-07-04 13:21:01
 ---

@@ -1,7 +1,7 @@
 ---
 title: ffmpeg的AVOption模块介绍
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: c7e647cb
 date: 2023-06-01 10:18:18
 ---

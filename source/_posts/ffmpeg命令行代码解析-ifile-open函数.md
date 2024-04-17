@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行代码解析-ifile_open函数
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: c23817ad
 date: 2023-06-01 09:49:45
 ---

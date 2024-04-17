@@ -1,7 +1,7 @@
 ---
 title: ffmpeg的AVOption模块API使用演示
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: 4338da24
 date: 2023-06-01 10:13:15
 ---

@@ -1,7 +1,7 @@
 ---
 title: ffmpeg推送hls流
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
 abbrlink: ab268f66
 date: 2023-06-01 13:12:58
 ---

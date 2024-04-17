@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行参数解析-split_commandline函数
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: 6d81cb11
 date: 2023-06-01 12:39:36
 ---

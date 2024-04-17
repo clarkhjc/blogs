@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行参数解析-write_option函数
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: 82f6ddc1
 date: 2023-06-01 11:57:13
 ---

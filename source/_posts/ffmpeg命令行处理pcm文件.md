@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行处理pcm文件
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
   - audio
 abbrlink: 47bfbd50
 date: 2023-06-01 10:57:47

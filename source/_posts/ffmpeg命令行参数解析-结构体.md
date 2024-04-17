@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行参数解析-结构体
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: 2c468ba2
 date: 2023-06-01 12:52:47
 ---

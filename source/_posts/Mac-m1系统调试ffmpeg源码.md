@@ -1,7 +1,7 @@
 ---
 title: Mac m1系统调试ffmpeg源码
 tags:
-  - ffmpeg-debug
+  - ffmpeg
 abbrlink: 88cda10e
 date: 2023-06-01 12:48:10
 ---

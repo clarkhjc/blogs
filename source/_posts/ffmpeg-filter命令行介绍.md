@@ -1,7 +1,7 @@
 ---
 title: ffmpeg-filter命令行介绍
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
 abbrlink: 631f01db
 date: 2023-06-03 08:28:52
 ---

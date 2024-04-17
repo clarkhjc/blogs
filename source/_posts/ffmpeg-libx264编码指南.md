@@ -1,7 +1,7 @@
 ---
 title: ffmpeg libx264编码指南
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
   - libx264
 abbrlink: dd9a4102
 date: 2023-06-01 12:24:34

@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行耗时输出(benchmark)
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
 abbrlink: 70a974da
 date: 2023-06-01 12:45:02
 ---

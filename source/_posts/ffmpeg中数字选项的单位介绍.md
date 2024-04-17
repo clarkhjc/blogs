@@ -1,7 +1,7 @@
 ---
 title: ffmpeg中数字选项的单位介绍
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
 abbrlink: 7f420acd
 date: 2023-06-03 08:45:46
 ---

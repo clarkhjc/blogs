@@ -1,7 +1,7 @@
 ---
 title: ffmpeg截图命令
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
 abbrlink: 8cb3b9b2
 date: 2023-06-01 13:15:31
 ---

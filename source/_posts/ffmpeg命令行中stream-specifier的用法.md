@@ -1,7 +1,7 @@
 ---
 title: ffmpeg命令行中stream specifier的用法
 tags:
-  - ffmpeg-cmd
+  - ffmpeg
 abbrlink: 63eec6bd
 date: 2023-06-01 09:40:37
 ---

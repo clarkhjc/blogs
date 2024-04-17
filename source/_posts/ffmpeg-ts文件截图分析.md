@@ -1,7 +1,7 @@
 ---
 title: ffmpeg ts文件截图分析
 tags:
-  - ffmpeg-src
+  - ffmpeg
 abbrlink: 7571f9ae
 date: 2023-06-01 13:05:40
 ---

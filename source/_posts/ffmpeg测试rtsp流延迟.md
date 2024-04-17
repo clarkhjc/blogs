@@ -1,8 +1,7 @@
 ---
 title: ffmpeg测试rtsp流延迟
 tags:
-  - ffmpeg-cmd
-  - rtsp
+  - ffmpeg
 abbrlink: 216c183b
 date: 2023-06-01 13:09:05
 ---
