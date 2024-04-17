@@ -7,9 +7,7 @@ tags:
 ---
 
 本文以 ubuntu 系统为例
-
 # 安装 cuda 和显卡驱动
-
 -   **安装 cuda**
 
 ```shell
@@ -35,6 +33,9 @@ sudo apt install nvidia-driver-550
 参考文档
 
 > https://docs.nvidia.com/video-technologies/video-codec-sdk/12.0/ffmpeg-with-nvidia-gpu/index.html
+
+ffmpeg单独维护了一个仓库[nv-codec-headers](https://git.videolan.org/git/ffmpeg/nv-codec-headers.git)，用于存放nvidia解码和编码所需的头文件，这里的头文件采用的是动态加载库方式。
+解码用到`dynlink_cuviddec.h`和`dynlink_nvcuvid.h`，编码用到`nvEncodeAPI.h`。
 
 ```shell
 # FFmpeg requires separate git repository nv-codec-headers for NV-accelerated ffmpeg build.
