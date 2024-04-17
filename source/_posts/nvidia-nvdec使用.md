@@ -21,3 +21,35 @@ ffmpeg单独维护了一个仓库[nv-codec-headers](https://git.videolan.org/git
 
 ## 库文件
 - 显卡驱动安装后，会在系统目录安装`libnvcuvid.so`库，在ubuntu系统中的路径为`/usr/lib/x86_64-linux-gnu/libnvcuvid.so`，这是解码需要依赖的库。
+
+# VIDEO_CODEC_SDK使用
+- sdk下载地址
+>https://developer.nvidia.com/nvidia-video-codec-sdk/download
+
+- 安装sdk依赖项
+```shell
+# ffmpeg
+自行编译安装
+# vulkan
+sudo apt-get install libvulkan-dev
+# EGL
+sudo apt-get install libegl1
+# FREEGLUT
+sudo apt-get install freeglut3-dev
+# GLEW
+sudo apt-get install libglew-dev
+
+# GCC-10
+sudo apt-get install gcc-10 g++-10
+```
+- 下载解压之后，进入`Video_Codec_SDK_12.2.72/Samples`目录，执行
+```shell
+# 首先设置gcc使用gcc10
+export CC=/usr/bin/gcc-10
+export CXX=/usr/bin/g++-10
+
+mkdir build
+cd build
+cmake ..
+make
+```
