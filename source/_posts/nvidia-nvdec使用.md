@@ -45,6 +45,7 @@ tags:
 
 ## sdk代码分析
 - **解码类的集成和调用**
+sdk以Video_Codec_SDK_12.2.72为例
 文件`Samples/NvCodec/NvDecoder/NvDecoder.cpp`是nvdec的c++封装类，用户可以直接集成这个文件，进行简单的接口调用即可以实现nvidia硬解能力。
 代码调用示例如下
 ```C++
@@ -90,7 +91,59 @@ for (int i = 0; i < nFrameReturned; i++) {
     // frame_buf存放yuv数据
     frame_buf = dec.GetFrame();
 }
-
+```
+- **创建视频解析器**
+```c++
+    CUVIDPARSERPARAMS videoParserParameters = {};
+    videoParserParameters.CodecType              = eCodec;  // codec类型
+    videoParserParameters.ulMaxNumDecodeSurfaces = 1;       // 在创建解析器时无法知道解码需要多少表面 此处设置一个伪值
+    videoParserParameters.ulClockRate            = clkRate; // 时间戳单位 Hz
+    videoParserParameters.ulMaxDisplayDelay      = bLowLatency ? 0 : 1;     // 如果设置了低延迟 则显示回调延迟为0
+    videoParserParameters.pUserData              = this;                    // 用于回调函数的用户上下文指针
+    videoParserParameters.pfnSequenceCallback    = HandleVideoSequenceProc; // 序列回调
+    videoParserParameters.pfnDecodePicture       = HandlePictureDecodeProc; // 图像解码回调
+    videoParserParameters.pfnDisplayPicture      = m_bForce_zero_latency ? NULL : HandlePictureDisplayProc; // 图像显示回调
+    videoParserParameters.pfnGetOperatingPoint   = HandleOperatingPointProc;                                // av1码流的回调函数
+    videoParserParameters.pfnGetSEIMsg           = m_bExtractSEIMessage ? HandleSEIMessagesProc : NULL;     // 需要提取sei消息时设置的回调函数
+    NVDEC_API_CALL(cuvidCreateVideoParser(&m_hParser, &videoParserParameters)); // 创建解析器
 ```
 
+- **解析码流数据包**
+```c++
+    CUVIDSOURCEDATAPACKET packet = { 0 };
+    packet.payload      = pData;                        // 码流缓存地址
+    packet.payload_size = nSize;                        // 码流缓存长度
+    packet.flags        = nFlags | CUVID_PKT_TIMESTAMP; // 指示时间戳是有效的
+    packet.timestamp    = nTimestamp;                   // 时间戳
+    if (!pData || nSize == 0) {
+        packet.flags |= CUVID_PKT_ENDOFSTREAM;          // 最后一个包需要设置这个标记，解析器将触发显示队列中所有挂起缓冲区的显示回调
+    }
+    NVDEC_API_CALL(cuvidParseVideoData(m_hParser, &packet));
+```
 
+- **序列回调函数**
+```c++
+// 查询解码器能力
+CUVIDDECODECAPS decodecaps;
+NVDEC_API_CALL(cuvidGetDecoderCaps(&decodecaps));
+
+// 创建解码器实例
+CUVIDDECODECREATEINFO videoDecodeCreateInfo = { 0 };
+NVDEC_API_CALL(cuvidCreateDecoder(&m_hDecoder, &videoDecodeCreateInfo));
+```
+
+- **图像解码回调函数**
+```c++
+// 发送开始解码的命令
+NVDEC_API_CALL(cuvidDecodePicture(m_hDecoder, pPicParams));
+```
+
+- **图像显示回调函数**
+```c++
+CUVIDPROCPARAMS videoProcessingParameters = {};
+NVDEC_API_CALL(cuvidMapVideoFrame(m_hDecoder, pDispInfo->picture_index, &dpSrcFrame,&nSrcPitch, &videoProcessingParameters));
+...
+CUDA_DRVAPI_CALL(cuMemcpy2DAsync(&m, m_cuvidStream));
+...
+NVDEC_API_CALL(cuvidUnmapVideoFrame(m_hDecoder, dpSrcFrame));
+```
