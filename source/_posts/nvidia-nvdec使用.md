@@ -43,3 +43,54 @@ tags:
         3. `cuvidUnmapVideoFrame`释放缓存
 4. cuvidDestroyVideoParser、cuvidDestroyDecoder
 
+## sdk代码分析
+- **解码类的集成和调用**
+文件`Samples/NvCodec/NvDecoder/NvDecoder.cpp`是nvdec的c++封装类，用户可以直接集成这个文件，进行简单的接口调用即可以实现nvidia硬解能力。
+代码调用示例如下
+```C++
+// 包含头文件
+#include "NvDecoder.h"
+
+// 创建NvDecoder对象 参数需要根据实际情况赋值
+CUcontext      cuContext;                // cuda上下文
+bool           bUseDeviceFrame;          // 使用显存还是内存存放拷贝出来的解码帧数据
+cudaVideoCodec eCodec;                   // 码流codec类型
+bool           bLowLatency;              // 控制显示回调延迟
+bool           bDeviceFramePitched;      // 显存字节对齐
+Rect           CropRect;                 // 裁剪参数
+Dim            ResizeDim;                // 缩放参数
+bool           extract_user_SEI_Message; // 提取未注册的SEI消息 支持H264 HEVC AV1
+int            maxWidth;                 // 码流最大宽度 用于reconfig解码器
+int            maxHeight;                // 码流最大高度 用于reconfig解码器
+unsigned int   clkRate;                  // 时间戳单位 Hz
+bool           force_zero_latency;       // 适用H264码流，在没有B帧情况下，在解码回调之后立刻进行显示回调
+
+NvDecoder dec(
+    cuContext,
+    bUseDeviceFrame,
+    eCodec,
+    bLowLatency,
+    bDeviceFramePitched,
+    &CropRect,
+    &ResizeDim,
+    extract_user_SEI_Message,
+    maxWidth,
+    maxHeight,
+    clkRate,
+    force_zero_latency
+);
+
+// 进行一次解码 码流参数根据实际情况赋值
+uint8_t *bs_buf;
+int      bs_len;
+int nFrameReturned = dec.Decode(bs_buf, bs_len);
+
+uint8_t *frame_buf;
+for (int i = 0; i < nFrameReturned; i++) {
+    // frame_buf存放yuv数据
+    frame_buf = dec.GetFrame();
+}
+
+```
+
+
