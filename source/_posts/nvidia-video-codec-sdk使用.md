@@ -1,8 +1,9 @@
 ---
 title: nvidia video_codec_sdk使用
-date: 2024-04-17 16:44:26
 tags:
-    - nvidia
+  - nvidia
+abbrlink: e151a831
+date: 2024-04-17 16:44:26
 ---
 
 # cuda和显卡驱动安装

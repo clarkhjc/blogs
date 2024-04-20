@@ -1,9 +1,10 @@
 ---
 title: ffmpeg编译支持Nvidia加速
-date: 2024-04-17 10:13:06
 tags:
-    - ffmpeg
-    - nvidia
+  - ffmpeg
+  - nvidia
+abbrlink: a6156b44
+date: 2024-04-17 10:13:06
 ---
 
 本文以 ubuntu 系统为例

@@ -1,8 +1,9 @@
 ---
 title: ffmpeg编译支持opus库
-date: 2024-04-20 13:29:30
 tags:
-    - ffmpeg
+  - ffmpeg
+abbrlink: fa2e322f
+date: 2024-04-20 13:29:30
 ---
 
 # 安装opus库
