@@ -1,11 +1,7 @@
 ---
-title: tags
-date: 2023-06-01 08:09:32
+title: 标签
+date: 2026-11-21 00:00:00
+type: tags
+comments: false
+top_img: /img/banner.jpg
 ---
-
-tags:
-- ffmpeg
-- C++
-- C
-- git
-- cmake

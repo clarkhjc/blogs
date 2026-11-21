@@ -18,10 +18,11 @@ nav:
   fixed: false
 
 menu:
-  # Home: / || fas fa-home
-  # List||fas fa-list:
-  #   Music: /music/ || fas fa-music
-  #   Movie: /movies/ || fas fa-video
+  首页: / || fas fa-home
+  归档: /archives/ || fas fa-archive
+  标签: /tags/ || fas fa-tags
+  分类: /categories/ || fas fa-folder-open
+  关于: /about/ || fas fa-heart
 
 # --------------------------------------
 # Code Blocks Settings
@@ -46,8 +47,7 @@ code_blocks:
 # Formal:
 #   icon: link || the description || color
 social:
-  # fab fa-github: https://github.com/xxxxx || Github || '#24292e'
-  # fas fa-envelope: mailto:xxxxxx@gmail.com || Email || '#4a7dbe'
+  fab fa-github: https://github.com/clarkhjc || GitHub || '#24292e'
 
 # --------------------------------------
 # Image Settings
@@ -56,8 +56,8 @@ social:
 favicon: /img/favicon.png
 
 avatar:
-  img: /img/butterfly-icon.png
-  effect: false
+  img: /img/avatar.png
+  effect: true
 
 # Disable all banner images
 disable_top_img: false
@@ -69,10 +69,10 @@ default_top_img:
 index_img: /img/banner.jpg
 
 # The banner image of archive page
-archive_img:
+archive_img: /img/banner.jpg
 
 # Note: tag page, not tags page
-tag_img:
+tag_img: /img/banner.jpg
 
 # The banner image of tag page, you can set the banner image for each tag
 # Format:
@@ -80,7 +80,7 @@ tag_img:
 tag_per_img:
 
 # Note: category page, not categories page
-category_img:
+category_img: /img/banner.jpg
 
 # The banner image of category page, you can set the banner image for each category
 # Format:
@@ -149,7 +149,7 @@ index_top_img_height:
 
 # The subtitle on homepage
 subtitle:
-  enable: false
+  enable: true
   # Typewriter Effect
   effect: true
   # Customize typed.js
@@ -165,6 +165,9 @@ subtitle:
   source: false
   # If you close the typewriter effect, the subtitle will only show the first line of sub
   sub:
+    - 记录技术，沉淀思考
+    - C / C++ / FFmpeg / 音视频
+    - 欢迎来到 ClarkH 的博客
 
 # Article layout on the homepage
 # 1: Cover on the left, info on the right
@@ -259,12 +262,12 @@ footer:
   nav:
   owner:
     enable: true
-    since: 2025
+    since: 2023
   # Copyright of theme and framework
   copyright:
     enable: true
     version: true
-  custom_text:
+  custom_text: 记录 C/C++、FFmpeg 与音视频技术 · 持续学习，坚持输出
 
 # --------------------------------------
 # Aside Settings
@@ -284,7 +287,7 @@ aside:
     category: true
   card_author:
     enable: true
-    description:
+    description: C/C++ · FFmpeg · 音视频
     button:
       enable: true
       icon: fab fa-github
@@ -292,7 +295,7 @@ aside:
       link: https://github.com/clarkhjc
   card_announcement:
     enable: true
-    content: This is my Blog
+    content: 欢迎来到我的博客 🎉<br>记录 C/C++、FFmpeg 与音视频技术
   card_recent_post:
     enable: true
     # If set 0 will show all
@@ -393,7 +396,7 @@ darkmode:
   end:
 
 # Show scroll percent in scroll-to-top button
-rightside_scroll_percent: false
+rightside_scroll_percent: true
 
 # Don't modify the following settings unless you know how they work
 # Choose: readmode,translate,darkmode,hideAside,toc,chat,comment
@@ -428,7 +431,7 @@ copy:
     limit_count: 150
 
 wordcount:
-  enable: false
+  enable: true
   # Display the word count of the article in post meta
   post_wordcount: true
   # Display the time to read the article in post meta
@@ -483,7 +486,7 @@ math:
 search:
   # Choose: algolia_search / local_search / docsearch
   # leave it empty if you don't need search
-  use:
+  use: local_search
   placeholder:
 
   # Algolia Search
@@ -825,7 +828,7 @@ display_mode: light
 
 # Configuration for beautifying the content of the article
 beautify:
-  enable: false
+  enable: true
   # Specify the field to beautify (site or post)
   field: post
   # Specify the icon to be used as a prefix for the title, such as '\f0c1'
