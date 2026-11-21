@@ -66,7 +66,7 @@ disable_top_img: false
 default_top_img:
 
 # The banner image of index page
-index_img:
+index_img: /img/banner.jpg
 
 # The banner image of archive page
 archive_img:
@@ -804,7 +804,7 @@ text_align_justify: false
 
 # Add a mask to the header and footer
 mask:
-  header: false
+  header: true
   footer: true
 
 # Loading Animation
@@ -1070,8 +1070,6 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
-    # Dark gradient background for the homepage header
-    - <style>#page-header.full_page{background:linear-gradient(120deg,#0f2027 0%,#203a43 50%,#2c5364 100%)}</style>
   bottom:
     # - <script src="xxxx"></script>
 
