@@ -804,7 +804,7 @@ text_align_justify: false
 
 # Add a mask to the header and footer
 mask:
-  header: true
+  header: false
   footer: true
 
 # Loading Animation
@@ -1070,6 +1070,8 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    # Dark gradient background for the homepage header
+    - <style>#page-header.full_page{background:linear-gradient(120deg,#0f2027 0%,#203a43 50%,#2c5364 100%)}</style>
   bottom:
     # - <script src="xxxx"></script>
 
