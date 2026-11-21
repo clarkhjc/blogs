@@ -102,9 +102,7 @@ cover:
   archives_enable: true
   # When cover is not set, the default cover is displayed
   default_cover:
-    - /img/banner.jpg
-    - /img/cover-steel.jpg
-    - /img/cover-circuit.jpg
+    # - xxx.jpg
 
 # Replace Broken Images
 error_img:
@@ -1075,6 +1073,8 @@ css_prefix: true
 inject:
   head:
     # - <link rel="stylesheet" href="/xxx.css">
+    # Alternating light/dark background for homepage article cards
+    - '<style>#recent-posts .recent-post-item:nth-child(even){background:#f6f8fa}[data-theme="dark"] #recent-posts .recent-post-item:nth-child(even){background:#1c1c1e}@media (prefers-color-scheme:dark){:root:not([data-theme="light"]) #recent-posts .recent-post-item:nth-child(even){background:#1c1c1e}}</style>'
   bottom:
     # - <script src="xxxx"></script>
 
