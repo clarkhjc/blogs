@@ -107,8 +107,4 @@ ignore:
 theme: cactus
 
 # Deployment
-## Docs: https://hexo.io/docs/one-command-deployment
-deploy:
-  type: git
-  repo: https://gitee.com/clarkhjc/clarkhjc.git
-  branch: main
+## handled by GitHub Actions (.github/workflows/pages.yml)

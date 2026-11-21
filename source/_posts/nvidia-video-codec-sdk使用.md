@@ -8,7 +8,7 @@ date: 2024-04-17 16:44:26
 
 # cuda和显卡驱动安装
 参考
->https://clarkhjc.gitee.io/clarkhjc/2024/04/17/ffmpeg%E7%BC%96%E8%AF%91%E6%94%AF%E6%8C%81Nvidia%E5%8A%A0%E9%80%9F/
+>https://clarkhjc.github.io/2024/04/17/ffmpeg%E7%BC%96%E8%AF%91%E6%94%AF%E6%8C%81Nvidia%E5%8A%A0%E9%80%9F/
 
 # sdk头文件和库文件
 
